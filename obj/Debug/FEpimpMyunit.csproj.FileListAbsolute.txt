@@ -1,0 +1,10 @@
+C:\Users\felip\source\repos\FEpimpMyunit\bin\Debug\FEpimpMyunit.exe.config
+C:\Users\felip\source\repos\FEpimpMyunit\bin\Debug\FEpimpMyunit.exe
+C:\Users\felip\source\repos\FEpimpMyunit\bin\Debug\FEpimpMyunit.pdb
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.csprojAssemblyReference.cache
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.Form1.resources
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.Properties.Resources.resources
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.csproj.GenerateResource.cache
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.csproj.CoreCompileInputs.cache
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.exe
+C:\Users\felip\source\repos\FEpimpMyunit\obj\Debug\FEpimpMyunit.pdb
