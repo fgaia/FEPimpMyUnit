@@ -46,6 +46,16 @@ namespace FEpimpMyunit
             this.label2 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.lblNome1 = new System.Windows.Forms.Label();
+            this.lblNome2 = new System.Windows.Forms.Label();
+            this.lblNome3 = new System.Windows.Forms.Label();
+            this.lblNome4 = new System.Windows.Forms.Label();
+            this.lblNome5 = new System.Windows.Forms.Label();
+            this.lblNome6 = new System.Windows.Forms.Label();
+            this.lblNome7 = new System.Windows.Forms.Label();
+            this.lblNome8 = new System.Windows.Forms.Label();
+            this.lblNome9 = new System.Windows.Forms.Label();
+            this.lblNome10 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picBox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox10)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picBox5)).BeginInit();
@@ -162,16 +172,19 @@ namespace FEpimpMyunit
             // 
             // cboSerie
             // 
+            this.cboSerie.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboSerie.FormattingEnabled = true;
             this.cboSerie.Items.AddRange(new object[] {
-            "Fire Emblem Echoes (Alm)"});
-            this.cboSerie.Location = new System.Drawing.Point(143, 149);
+            "Fire Emblem Echoes (Alm)",
+            "Fire Emblem Echoes (Celica)"});
+            this.cboSerie.Location = new System.Drawing.Point(126, 149);
             this.cboSerie.Name = "cboSerie";
-            this.cboSerie.Size = new System.Drawing.Size(121, 21);
+            this.cboSerie.Size = new System.Drawing.Size(151, 21);
             this.cboSerie.TabIndex = 12;
             // 
             // cboQuantidade
             // 
+            this.cboQuantidade.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboQuantidade.FormattingEnabled = true;
             this.cboQuantidade.Items.AddRange(new object[] {
             "1",
@@ -193,7 +206,7 @@ namespace FEpimpMyunit
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(176, 130);
+            this.label1.Location = new System.Drawing.Point(178, 130);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 16);
             this.label1.TabIndex = 14;
@@ -229,11 +242,131 @@ namespace FEpimpMyunit
             this.label3.TabIndex = 17;
             this.label3.Text = "Pimp My Unit";
             // 
+            // lblNome1
+            // 
+            this.lblNome1.AutoSize = true;
+            this.lblNome1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome1.Location = new System.Drawing.Point(35, 361);
+            this.lblNome1.Name = "lblNome1";
+            this.lblNome1.Size = new System.Drawing.Size(41, 15);
+            this.lblNome1.TabIndex = 18;
+            this.lblNome1.Text = "label4";
+            this.lblNome1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome2
+            // 
+            this.lblNome2.AutoSize = true;
+            this.lblNome2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome2.Location = new System.Drawing.Point(108, 361);
+            this.lblNome2.Name = "lblNome2";
+            this.lblNome2.Size = new System.Drawing.Size(41, 15);
+            this.lblNome2.TabIndex = 19;
+            this.lblNome2.Text = "label4";
+            this.lblNome2.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome3
+            // 
+            this.lblNome3.AutoSize = true;
+            this.lblNome3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome3.Location = new System.Drawing.Point(178, 361);
+            this.lblNome3.Name = "lblNome3";
+            this.lblNome3.Size = new System.Drawing.Size(41, 15);
+            this.lblNome3.TabIndex = 20;
+            this.lblNome3.Text = "label4";
+            this.lblNome3.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome4
+            // 
+            this.lblNome4.AutoSize = true;
+            this.lblNome4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome4.Location = new System.Drawing.Point(248, 361);
+            this.lblNome4.Name = "lblNome4";
+            this.lblNome4.Size = new System.Drawing.Size(41, 15);
+            this.lblNome4.TabIndex = 21;
+            this.lblNome4.Text = "label4";
+            this.lblNome4.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome5
+            // 
+            this.lblNome5.AutoSize = true;
+            this.lblNome5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome5.Location = new System.Drawing.Point(318, 361);
+            this.lblNome5.Name = "lblNome5";
+            this.lblNome5.Size = new System.Drawing.Size(41, 15);
+            this.lblNome5.TabIndex = 22;
+            this.lblNome5.Text = "label4";
+            this.lblNome5.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome6
+            // 
+            this.lblNome6.AutoSize = true;
+            this.lblNome6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome6.Location = new System.Drawing.Point(35, 439);
+            this.lblNome6.Name = "lblNome6";
+            this.lblNome6.Size = new System.Drawing.Size(41, 15);
+            this.lblNome6.TabIndex = 23;
+            this.lblNome6.Text = "label4";
+            this.lblNome6.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome7
+            // 
+            this.lblNome7.AutoSize = true;
+            this.lblNome7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome7.Location = new System.Drawing.Point(108, 439);
+            this.lblNome7.Name = "lblNome7";
+            this.lblNome7.Size = new System.Drawing.Size(41, 15);
+            this.lblNome7.TabIndex = 24;
+            this.lblNome7.Text = "label4";
+            this.lblNome7.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome8
+            // 
+            this.lblNome8.AutoSize = true;
+            this.lblNome8.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome8.Location = new System.Drawing.Point(178, 439);
+            this.lblNome8.Name = "lblNome8";
+            this.lblNome8.Size = new System.Drawing.Size(41, 15);
+            this.lblNome8.TabIndex = 25;
+            this.lblNome8.Text = "label4";
+            this.lblNome8.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome9
+            // 
+            this.lblNome9.AutoSize = true;
+            this.lblNome9.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome9.Location = new System.Drawing.Point(248, 439);
+            this.lblNome9.Name = "lblNome9";
+            this.lblNome9.Size = new System.Drawing.Size(41, 15);
+            this.lblNome9.TabIndex = 26;
+            this.lblNome9.Text = "label4";
+            this.lblNome9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblNome10
+            // 
+            this.lblNome10.AutoSize = true;
+            this.lblNome10.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNome10.Location = new System.Drawing.Point(318, 439);
+            this.lblNome10.Name = "lblNome10";
+            this.lblNome10.Size = new System.Drawing.Size(41, 15);
+            this.lblNome10.TabIndex = 27;
+            this.lblNome10.Text = "label4";
+            this.lblNome10.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(390, 470);
+            this.ClientSize = new System.Drawing.Size(396, 470);
+            this.Controls.Add(this.lblNome10);
+            this.Controls.Add(this.lblNome9);
+            this.Controls.Add(this.lblNome8);
+            this.Controls.Add(this.lblNome7);
+            this.Controls.Add(this.lblNome6);
+            this.Controls.Add(this.lblNome5);
+            this.Controls.Add(this.lblNome4);
+            this.Controls.Add(this.lblNome3);
+            this.Controls.Add(this.lblNome2);
+            this.Controls.Add(this.lblNome1);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label2);
@@ -251,6 +384,7 @@ namespace FEpimpMyunit
             this.Controls.Add(this.picBox5);
             this.Controls.Add(this.picBox10);
             this.Controls.Add(this.picBox6);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
             this.Name = "Form1";
             this.Text = "Fire Emblem PMU";
             ((System.ComponentModel.ISupportInitialize)(this.picBox6)).EndInit();
@@ -288,6 +422,16 @@ namespace FEpimpMyunit
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label lblNome1;
+        private System.Windows.Forms.Label lblNome2;
+        private System.Windows.Forms.Label lblNome3;
+        private System.Windows.Forms.Label lblNome4;
+        private System.Windows.Forms.Label lblNome5;
+        private System.Windows.Forms.Label lblNome6;
+        private System.Windows.Forms.Label lblNome7;
+        private System.Windows.Forms.Label lblNome8;
+        private System.Windows.Forms.Label lblNome9;
+        private System.Windows.Forms.Label lblNome10;
     }
 }
 

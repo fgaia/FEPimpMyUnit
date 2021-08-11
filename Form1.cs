@@ -15,8 +15,22 @@ namespace FEpimpMyunit
         public Form1()
         {
             InitializeComponent();
+            eraseLabels();
         }
 
+        public void eraseLabels()
+        {
+            lblNome1.Text = "";
+            lblNome2.Text = "";
+            lblNome3.Text = "";
+            lblNome4.Text = "";
+            lblNome5.Text = "";
+            lblNome6.Text = "";
+            lblNome7.Text = "";
+            lblNome8.Text = "";
+            lblNome9.Text = "";
+            lblNome10.Text = "";
+        }
         public void erasePaths()
         {
             picBox1.ImageLocation = "";
@@ -24,23 +38,24 @@ namespace FEpimpMyunit
             picBox3.ImageLocation = "";
             picBox4.ImageLocation = "";
             picBox5.ImageLocation = "";
-            picBox6.ImageLocation = ""; 
+            picBox6.ImageLocation = "";
             picBox7.ImageLocation = "";
             picBox8.ImageLocation = "";
             picBox9.ImageLocation = "";
             picBox10.ImageLocation = "";
-        }
+            }
 
-        
         private void button1_Click(object sender, EventArgs e)
         {
-            if (cboQuantidade.Text != "" )
+            eraseLabels();
+            if (cboSerie.Text != "")
             {
-                int caseSwitch = int.Parse(cboQuantidade.Text);
-                erasePaths();
-
-                if (cboSerie.Text == "Fire Emblem Echoes (Alm)")
+                if (cboQuantidade.Text != "")
                 {
+                    int caseSwitch = int.Parse(cboQuantidade.Text);
+                    erasePaths();
+
+
                     switch (caseSwitch)
                     {
                         case 1:
@@ -129,119 +144,282 @@ namespace FEpimpMyunit
                             break;
                     }
 
-                }
-                else { MessageBox.Show("You must choose a series!", "Alert"); }
-
-
-            } else { MessageBox.Show("You must select characters quantity!", "alert"); }
-
+                }else { MessageBox.Show("You must select characters quantity!", "alert"); }
+            }else { MessageBox.Show("You must select a series first!", "alert"); }
         }
 
         public void definepic1()
         {
-                string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+            string textoswitch = cboSerie.Text;
+            Random rnd = new Random();
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
                 "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
-                Random rnd = new Random();
-                picBox1.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-         }
+                    picBox1.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    lblNome1.Text = picBox1.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox1.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    lblNome1.Text = picBox1.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
+        }
 
         public void definepic2()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox2.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox2.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox2.ImageLocation == picBox1.ImageLocation; picBox2.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome2.Text = picBox2.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
 
-            for (picBox2.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-            picBox2.ImageLocation == picBox1.ImageLocation; picBox2.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox2.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox2.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox2.ImageLocation == picBox1.ImageLocation; picBox2.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome2.Text = picBox2.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
         }
 
         public void definepic3()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox3.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox3.ImageLocation == picBox1.ImageLocation || picBox3.ImageLocation == picBox2.ImageLocation; 
-                           picBox3.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox3.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox3.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox3.ImageLocation == picBox1.ImageLocation || picBox3.ImageLocation == picBox2.ImageLocation; picBox3.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome3.Text = picBox3.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox3.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox3.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox3.ImageLocation == picBox1.ImageLocation || picBox3.ImageLocation == picBox2.ImageLocation; picBox3.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome3.Text = picBox3.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
         }
 
         public void definepic4()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox4.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox4.ImageLocation == picBox1.ImageLocation || picBox4.ImageLocation == picBox2.ImageLocation || picBox4.ImageLocation == picBox3.ImageLocation;
-                           picBox4.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
-         }
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox4.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox4.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox4.ImageLocation == picBox1.ImageLocation || picBox4.ImageLocation == picBox2.ImageLocation || picBox4.ImageLocation == picBox3.ImageLocation; picBox4.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome4.Text = picBox4.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox4.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox4.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox4.ImageLocation == picBox1.ImageLocation || picBox4.ImageLocation == picBox2.ImageLocation || picBox4.ImageLocation == picBox3.ImageLocation; picBox4.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome4.Text = picBox4.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
+
+        }
 
         public void definepic5()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox5.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox5.ImageLocation == picBox1.ImageLocation || picBox5.ImageLocation == picBox2.ImageLocation || picBox5.ImageLocation == picBox3.ImageLocation || picBox5.ImageLocation == picBox4.ImageLocation;
-                           picBox5.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox5.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox5.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox5.ImageLocation == picBox1.ImageLocation || picBox5.ImageLocation == picBox2.ImageLocation || picBox5.ImageLocation == picBox3.ImageLocation
+            || picBox5.ImageLocation == picBox4.ImageLocation; picBox5.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome5.Text = picBox5.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox5.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox5.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox5.ImageLocation == picBox1.ImageLocation || picBox5.ImageLocation == picBox2.ImageLocation || picBox5.ImageLocation == picBox3.ImageLocation
+            || picBox5.ImageLocation == picBox4.ImageLocation; picBox5.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome5.Text = picBox5.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
+
         }
 
         public void definepic6()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox6.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox6.ImageLocation == picBox1.ImageLocation || picBox6.ImageLocation == picBox2.ImageLocation || picBox6.ImageLocation == picBox3.ImageLocation
-                           || picBox6.ImageLocation == picBox4.ImageLocation || picBox6.ImageLocation == picBox5.ImageLocation;
-                           picBox6.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox6.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox6.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox6.ImageLocation == picBox1.ImageLocation || picBox6.ImageLocation == picBox2.ImageLocation || picBox6.ImageLocation == picBox3.ImageLocation
+            || picBox6.ImageLocation == picBox4.ImageLocation || picBox6.ImageLocation == picBox5.ImageLocation; picBox6.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome6.Text = picBox6.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox6.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox6.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox6.ImageLocation == picBox1.ImageLocation || picBox6.ImageLocation == picBox2.ImageLocation || picBox6.ImageLocation == picBox3.ImageLocation
+            || picBox6.ImageLocation == picBox4.ImageLocation || picBox6.ImageLocation == picBox5.ImageLocation; picBox6.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome6.Text = picBox6.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
         }
 
-        public void definepic7()
-        {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+            public void definepic7()
+            {
+                string textoswitch = cboSerie.Text;
+                Random rnd = new Random();
+                switch (textoswitch)
+                {
+                    case "Fire Emblem Echoes (Alm)":
+                        string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
                 "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
-            Random rnd = new Random();
-            for (picBox7.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox7.ImageLocation == picBox1.ImageLocation || picBox7.ImageLocation == picBox2.ImageLocation || picBox7.ImageLocation == picBox3.ImageLocation
-                           || picBox7.ImageLocation == picBox4.ImageLocation || picBox7.ImageLocation == picBox5.ImageLocation || picBox7.ImageLocation == picBox6.ImageLocation;
-                           picBox7.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
-        }
+                        picBox7.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                        for (picBox7.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                picBox7.ImageLocation == picBox1.ImageLocation || picBox7.ImageLocation == picBox2.ImageLocation || picBox7.ImageLocation == picBox3.ImageLocation
+                || picBox7.ImageLocation == picBox4.ImageLocation || picBox7.ImageLocation == picBox5.ImageLocation || picBox7.ImageLocation == picBox6.ImageLocation; picBox7.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome7.Text = picBox7.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
 
+                    case "Fire Emblem Echoes (Celica)":
+                        string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                        picBox7.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                        for (picBox7.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                picBox7.ImageLocation == picBox1.ImageLocation || picBox7.ImageLocation == picBox2.ImageLocation || picBox7.ImageLocation == picBox3.ImageLocation
+                || picBox7.ImageLocation == picBox4.ImageLocation || picBox7.ImageLocation == picBox5.ImageLocation || picBox7.ImageLocation == picBox6.ImageLocation; picBox7.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome7.Text = picBox7.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+                }
+            }
         public void definepic8()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox8.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox8.ImageLocation == picBox1.ImageLocation || picBox8.ImageLocation == picBox2.ImageLocation || picBox8.ImageLocation == picBox3.ImageLocation
-                           || picBox8.ImageLocation == picBox4.ImageLocation || picBox8.ImageLocation == picBox5.ImageLocation || picBox8.ImageLocation == picBox6.ImageLocation
-                           || picBox8.ImageLocation == picBox7.ImageLocation;
-                           picBox8.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                    picBox8.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox8.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox8.ImageLocation == picBox1.ImageLocation || picBox8.ImageLocation == picBox2.ImageLocation || picBox8.ImageLocation == picBox3.ImageLocation
+            || picBox8.ImageLocation == picBox4.ImageLocation || picBox8.ImageLocation == picBox5.ImageLocation || picBox8.ImageLocation == picBox6.ImageLocation
+            || picBox8.ImageLocation == picBox7.ImageLocation; picBox8.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome8.Text = picBox8.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox8.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox8.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox8.ImageLocation == picBox1.ImageLocation || picBox8.ImageLocation == picBox2.ImageLocation || picBox8.ImageLocation == picBox3.ImageLocation
+            || picBox8.ImageLocation == picBox4.ImageLocation || picBox8.ImageLocation == picBox5.ImageLocation || picBox8.ImageLocation == picBox6.ImageLocation
+            || picBox8.ImageLocation == picBox7.ImageLocation; picBox8.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome8.Text = picBox8.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
         }
 
         public void definepic9()
         {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
-                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+            string textoswitch = cboSerie.Text;
             Random rnd = new Random();
-            for (picBox9.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox9.ImageLocation == picBox1.ImageLocation || picBox9.ImageLocation == picBox2.ImageLocation || picBox9.ImageLocation == picBox3.ImageLocation
-                           || picBox9.ImageLocation == picBox4.ImageLocation || picBox9.ImageLocation == picBox5.ImageLocation
-                           || picBox9.ImageLocation == picBox6.ImageLocation || picBox9.ImageLocation == picBox7.ImageLocation || picBox9.ImageLocation == picBox8.ImageLocation;
-                           picBox9.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
-        }
-
-        public void definepic10()
-        {
-            string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+            switch (textoswitch)
+            {
+                case "Fire Emblem Echoes (Alm)":
+                    string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
                 "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
-            Random rnd = new Random();
-            for (picBox10.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
-                           picBox10.ImageLocation == picBox1.ImageLocation || picBox10.ImageLocation == picBox2.ImageLocation || picBox10.ImageLocation == picBox3.ImageLocation
-                           || picBox10.ImageLocation == picBox4.ImageLocation || picBox10.ImageLocation == picBox5.ImageLocation
-                           || picBox10.ImageLocation == picBox6.ImageLocation || picBox10.ImageLocation == picBox7.ImageLocation || picBox10.ImageLocation == picBox8.ImageLocation || picBox10.ImageLocation == picBox9.ImageLocation;
-                           picBox10.ImageLocation = @"C:\Users\felip\source\repos\FEpimpMyunit\Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
-        }
+                    picBox9.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                    for (picBox9.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+            picBox9.ImageLocation == picBox1.ImageLocation || picBox9.ImageLocation == picBox2.ImageLocation || picBox9.ImageLocation == picBox3.ImageLocation
+            || picBox9.ImageLocation == picBox4.ImageLocation || picBox9.ImageLocation == picBox5.ImageLocation || picBox9.ImageLocation == picBox6.ImageLocation
+            || picBox9.ImageLocation == picBox7.ImageLocation || picBox9.ImageLocation == picBox8.ImageLocation; picBox9.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome9.Text = picBox9.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
 
-      }
+                case "Fire Emblem Echoes (Celica)":
+                    string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                    picBox9.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                    for (picBox9.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+            picBox9.ImageLocation == picBox1.ImageLocation || picBox9.ImageLocation == picBox2.ImageLocation || picBox9.ImageLocation == picBox3.ImageLocation
+            || picBox9.ImageLocation == picBox4.ImageLocation || picBox9.ImageLocation == picBox5.ImageLocation || picBox9.ImageLocation == picBox6.ImageLocation
+            || picBox9.ImageLocation == picBox7.ImageLocation || picBox9.ImageLocation == picBox8.ImageLocation; picBox9.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome9.Text = picBox9.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+            }
+        }
+            public void definepic10()
+            {
+                string textoswitch = cboSerie.Text;
+                Random rnd = new Random();
+                switch (textoswitch)
+                {
+                    case "Fire Emblem Echoes (Alm)":
+                        string[] almchar = new string[] {"Gray", "Tobin", "Faye", "Kliff", "Lukas", "Silque", "Clair", "Clive",
+                "Forsyth", "Python", "Luthier", "Mathilda", "Delthea", "Tatiana", "Zeke", "Mycen"};
+                        picBox10.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                        for (picBox10.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png";
+                picBox10.ImageLocation == picBox1.ImageLocation || picBox10.ImageLocation == picBox2.ImageLocation || picBox10.ImageLocation == picBox3.ImageLocation
+                || picBox10.ImageLocation == picBox4.ImageLocation || picBox10.ImageLocation == picBox5.ImageLocation || picBox10.ImageLocation == picBox6.ImageLocation
+                || picBox10.ImageLocation == picBox7.ImageLocation || picBox10.ImageLocation == picBox8.ImageLocation || picBox10.ImageLocation == picBox9.ImageLocation; picBox10.ImageLocation = @"Resources\fire emblem images\" + almchar[rnd.Next(almchar.Length)] + ".png") { }
+                    lblNome10.Text = picBox10.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+
+                    case "Fire Emblem Echoes (Celica)":
+                        string[] celicachar = new string[] {"Mae", "Boey", "Genny", "Saber", "Valbar", "Leon",
+            "Kamui", "Palla", "Catria", "Est", "Jesse", "Atlas", "Sonya", "Deen", "Nomah", "Conrad"};
+                        picBox10.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                        for (picBox10.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png";
+                picBox10.ImageLocation == picBox1.ImageLocation || picBox10.ImageLocation == picBox2.ImageLocation || picBox10.ImageLocation == picBox3.ImageLocation
+                || picBox10.ImageLocation == picBox4.ImageLocation || picBox10.ImageLocation == picBox5.ImageLocation || picBox10.ImageLocation == picBox6.ImageLocation
+                || picBox10.ImageLocation == picBox7.ImageLocation || picBox10.ImageLocation == picBox8.ImageLocation || picBox10.ImageLocation == picBox9.ImageLocation; picBox10.ImageLocation = @"Resources\fire emblem images\" + celicachar[rnd.Next(celicachar.Length)] + ".png") { }
+                    lblNome10.Text = picBox10.ImageLocation.Substring(29).Replace(".png", "");
+                    break;
+                }
+            }
+    }   
 }
